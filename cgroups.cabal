@@ -1,0 +1,47 @@
+Name:                cgroups
+Version:             1.0.0
+Synopsis:            Sample program written for Zalora.
+License-file:        LICENSE
+License:             MIT
+Author:              John Wiegley
+Maintainer:          johnw@newartisans.com
+Build-Type:          Simple
+Cabal-Version:       >=1.10
+Category:            System
+Description:
+  Sample program written for Zalora.
+
+-- Source-repository head
+--   type: git
+--   location: git://github.com/jwiegley/cgroups.git
+
+Executable cgroups
+    default-language:   Haskell98
+    main-is: CGroups.hs
+    ghc-options: -Wall
+    build-depends:
+        base                 >= 3 && < 5
+      , aeson                >= 0.7.0.2
+      , scotty               >= 0.7.1
+      , wai                  >= 2.1.0.1
+      , wai-handler-fastcgi  >= 2.0.0.1
+      , text                 >= 0.11.3.1
+      , transformers         >= 0.3.0.0
+    default-extensions: 
+        BangPatterns
+        OverloadedStrings
+
+test-suite test
+    hs-source-dirs: test
+    default-language: Haskell2010
+    main-is: main.hs
+    type: exitcode-stdio-1.0
+    ghc-options: -Wall -threaded
+    build-depends:
+        base
+      , cgroups
+      , unix                 >= 2.5.1.1
+      , hspec                >= 1.4
+      , monad-logger         >= 0.3.4.0
+    default-extensions: 
+        OverloadedStrings
