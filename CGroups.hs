@@ -1,6 +1,6 @@
 module Main where
 
-import           Control.Monad.Trans.Class
+import           Control.Monad.IO.Class
 import           Data.Text
 import qualified Data.Text.Lazy as TL
 import           Network.Wai
@@ -16,7 +16,8 @@ cgroups = do
     get "/list" $ json ["foo" :: Text, "bar", "baz"]
     matchAny (regex ".*") $ do
         hdrs <- headers
-        lift $ putStrLn $ "Headers: " ++ show hdrs
+        liftIO $ putStrLn $ "Headers: " ++ show hdrs
         req <- request
-        html $ TL.pack $ "<p>Didn't understand route: " ++ show (pathInfo req) ++ "</p>\n"
-            ++ "<p>Didn't understand route: " ++ show (rawPathInfo req) ++ "</p>"
+        html $ TL.pack
+             $ "<p>Didn't understand: " ++ show (pathInfo req) ++ "</p>\n"
+            ++ "<p>Didn't understand: " ++ show (rawPathInfo req) ++ "</p>"
