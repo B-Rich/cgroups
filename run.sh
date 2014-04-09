@@ -1,7 +1,8 @@
 #!/bin/bash
-spawn-fcgi \
+./spawn-fcgi \
     -d $HOME/src/cgroups \
-    -a 127.0.0.1 \
-    -p 5000 \
-    -n \
-    -- $HOME/src/cgroups/dist/build/cgroups/cgroups
+    -f $HOME/src/cgroups/dist/build/cgroups/cgroups \
+    -s /tmp/cgroups.socket \
+    -M 511 \
+    -u johnw \
+    -n

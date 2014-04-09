@@ -3,13 +3,14 @@ module Main where
 import           Control.Monad.IO.Class
 import           Data.Text
 import qualified Data.Text.Lazy as TL
+import           Network.Socket
 import           Network.Wai
 import           Network.Wai.Handler.FastCGI
 import           Prelude hiding (log)
 import           Web.Scotty
 
 main :: IO ()
-main = scottyApp cgroups >>= run
+main = withSocketsDo $ scottyApp cgroups >>= run
 
 cgroups :: ScottyM ()
 cgroups = do

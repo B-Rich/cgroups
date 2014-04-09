@@ -21,12 +21,13 @@ Executable cgroups
     ghc-options: -Wall
     build-depends:
         base                 >= 3 && < 5
-      , aeson                >= 0.7.0.2
-      , scotty               >= 0.7.1
-      , wai                  >= 2.1.0.1
-      , wai-handler-fastcgi  >= 2.0.0.1
-      , text                 >= 0.11.3.1
-      , transformers         >= 0.3.0.0
+      , aeson                == 0.7.*
+      , network              == 2.4.*
+      , scotty               == 0.7.*
+      , wai                  == 2.1.*
+      , wai-handler-fastcgi  == 2.0.*
+      , text                 == 0.11.*
+      , transformers         == 0.3.*
     default-extensions: 
         BangPatterns
         OverloadedStrings
@@ -40,8 +41,8 @@ test-suite test
     build-depends:
         base
       , cgroups
-      , unix                 >= 2.5.1.1
-      , hspec                >= 1.4
-      , monad-logger         >= 0.3.4.0
+      , unix                 == 2.5.*
+      , hspec                == 1.4.*
+      , monad-logger         == 0.3.*
     default-extensions: 
         OverloadedStrings
