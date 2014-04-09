@@ -16,33 +16,25 @@ Description:
 --   location: git://github.com/jwiegley/cgroups.git
 
 Executable cgroups
-    default-language:   Haskell98
-    main-is: CGroups.hs
-    ghc-options: -Wall
+    default-language: Haskell2010
+    main-is:          CGroups.hs
+    ghc-options:      -Wall
+
     build-depends:
         base                 >= 3 && < 5
       , aeson                == 0.7.*
+      , conduit              == 1.1.*
+      , conduit-combinators  == 0.2.*
+      , http-types           == 0.8.*
       , network              == 2.4.*
       , scotty               == 0.7.*
-      , wai                  == 2.1.*
-      , wai-handler-fastcgi  == 2.0.*
+      , system-fileio        == 0.3.*
+      , system-filepath      == 0.4.*
       , text                 == 0.11.*
       , transformers         == 0.3.*
+      , wai                  == 2.1.*
+      , wai-handler-fastcgi  == 2.0.*
+
     default-extensions: 
         BangPatterns
-        OverloadedStrings
-
-test-suite test
-    hs-source-dirs: test
-    default-language: Haskell2010
-    main-is: main.hs
-    type: exitcode-stdio-1.0
-    ghc-options: -Wall -threaded
-    build-depends:
-        base
-      , cgroups
-      , unix                 == 2.5.*
-      , hspec                == 1.4.*
-      , monad-logger         == 0.3.*
-    default-extensions: 
         OverloadedStrings
