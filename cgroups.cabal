@@ -1,19 +1,16 @@
-Name:                cgroups
-Version:             1.0.0
-Synopsis:            Sample program written for Zalora.
-License-file:        LICENSE
-License:             MIT
-Author:              John Wiegley
-Maintainer:          johnw@newartisans.com
-Build-Type:          Simple
-Cabal-Version:       >=1.10
-Category:            System
+Name:          cgroups
+Version:       1.0.0
+Synopsis:      Sample program written for Zalora.
+License-file:  LICENSE
+License:       MIT
+Author:        John Wiegley
+Maintainer:    johnw@newartisans.com
+Build-Type:    Simple
+Cabal-Version: >=1.10
+Category:      System
+
 Description:
   Sample program written for Zalora.
-
--- Source-repository head
---   type: git
---   location: git://github.com/jwiegley/cgroups.git
 
 Executable cgroups
     default-language: Haskell2010

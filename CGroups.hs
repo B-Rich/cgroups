@@ -77,7 +77,7 @@ cgroups = do
 
     withCGroup :: String -> (FilePath -> ActionM ()) -> ActionM ()
     withCGroup cg go = do
-        let dir       = cgdir </> decodeString cg
+        let dir = cgdir </> decodeString cg
             tasksFile = dir </> "tasks"
         dirExists <- liftIO $ isDirectory dir
         if dirExists
