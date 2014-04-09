@@ -1,7 +1,5 @@
 /dist/
-/access.log
-/cgroups.log
-/error.log
+/logs/
 /flycheck_CGroups
 /nginx.pid
 /static/
