@@ -2,8 +2,6 @@
 /access.log
 /cgroups.log
 /error.log
-/fastcgi_params
 /flycheck_CGroups
-/mime.types
 /nginx.pid
 /static/
